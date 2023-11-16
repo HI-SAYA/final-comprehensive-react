@@ -24,11 +24,30 @@ function Header() {
     }
 
     function BeforeLogin() {
+
+        const onClickLoginHandler = () => {
+            navigate('/member/login');
+        }
+
+        const onClickSignupHandler = () => {
+            navigate('/member/signup');
+        }
+
         return(
             <div>
-                <button className="header-btn">로그인</button>
+                <button
+                    className="header-btn"
+                    onClick={ onClickLoginHandler }
+                >
+                    로그인
+                </button>
                 |
-                <button className="header-btn">회원가입</button>
+                <button
+                    className="header-btn"
+                    onClick={ onClickSignupHandler }
+                >
+                    회원가입
+                </button>
             </div>
         )
     }
