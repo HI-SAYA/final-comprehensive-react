@@ -1,5 +1,5 @@
 import './style.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Main from "./pages/products/Main";
 import CategoryMain from "./pages/products/CategoryMain";
@@ -7,6 +7,13 @@ import SearchMain from "./pages/products/SearchMain";
 import ProductDetail from "./pages/products/ProductDetail";
 import Signup from "./pages/member/Signup";
 import Login from "./pages/member/Login";
+import ProtectedRoute from "./component/router/ProtectedRoute";
+import Error from "./pages/error/Error";
+import MyPageLayout from "./layouts/MyPageLayout";
+import Profile from "./pages/member/Profile";
+import ProductManagement from "./pages/admin/ProductManagement";
+import ProductRegist from "./pages/admin/ProductRegist";
+import ProductModify from "./pages/admin/ProductModify";
 
 function App() {
   return (
@@ -19,11 +26,37 @@ function App() {
                   <Route path="search" element={ <SearchMain/> }/>
                   <Route path=":productCode" element={ <ProductDetail/> }/>
               </Route>
+              <Route path="product-management"
+                     element={
+                      <ProtectedRoute authCheck={true}>
+                        <ProductManagement/>
+                      </ProtectedRoute>
+                    }
+              />
+              <Route path="product-regist"
+                     element={
+                         <ProtectedRoute authCheck={true}>
+                             <ProductRegist/>
+                         </ProtectedRoute>
+                     }
+              />
+              <Route path="product-modify/:productCode"
+                     element={
+                         <ProtectedRoute authCheck={true}>
+                             <ProductModify/>
+                         </ProtectedRoute>
+                     }
+              />
           </Route>
             <Route path="/member">
-                <Route path="signup" element={ <Signup/> }/>
-                <Route path="login" element={ <Login/> }/>
+                <Route path="signup" element={ <ProtectedRoute loginCheck={false}><Signup/></ProtectedRoute> }/>
+                <Route path="login" element={ <ProtectedRoute loginCheck={false}><Login/></ProtectedRoute> }/>
+                <Route path="mypage" element={ <ProtectedRoute loginCheck={true}><MyPageLayout/></ProtectedRoute> }>
+                    <Route index element={ <Navigate to="/member/mypage/profile" replace/>}/>
+                    <Route path="profile" element={ <Profile/> }/>
+                </Route>
             </Route>
+            <Route path="*" element={<Error/>}/>
         </Routes>
       </BrowserRouter>
   );

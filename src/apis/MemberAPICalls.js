@@ -1,5 +1,5 @@
-import {request} from "./Api";
-import {loginFailure, loginSuccess, signupFailure, signupSuccess} from "../modules/MemberModule";
+import {authRequest, request} from "./Api";
+import {getProfile, loginFailure, loginSuccess, signupFailure, signupSuccess} from "../modules/MemberModule";
 import {toast} from "react-toastify";
 import {saveToken} from "../utils/TokenUtils";
 
@@ -46,6 +46,20 @@ export const callLoginAPI = ({loginRequest}) => {
         } else {
             dispatch(loginFailure());
 
+        }
+    }
+}
+
+
+export const callMemberAPI = () => {
+
+    return async (dispatch, getState) => {
+
+        const result = await authRequest.get("/api/v1/member");
+        console.log('callMemberAPI result : ', result);
+
+        if(result.status === 200) {
+            dispatch(getProfile(result));
         }
     }
 }
