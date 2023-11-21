@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {callAdminProductListAPI} from "../../apis/ProductAPICalls";
-import PagingBar from "../../component/common/PagingBar";
-import ProductTable from "../../component/items/ProductTable";
+import PagingBar from "../../components/common/PagingBar";
+import ProductTable from "../../components/items/ProductTable";
 import {useNavigate} from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 

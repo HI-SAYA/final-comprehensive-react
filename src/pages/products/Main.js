@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {callProductListAPI} from "../../apis/ProductAPICalls";
-import ProductList from "../../component/lists/ProductList";
-import PagingBar from "../../component/common/PagingBar";
+import ProductList from "../../components/lists/ProductList";
+import PagingBar from "../../components/common/PagingBar";
 
 function Main() {
 

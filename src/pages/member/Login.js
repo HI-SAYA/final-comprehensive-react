@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import LoginForm from "../../component/form/LoginForm";
+import LoginForm from "../../components/form/LoginForm";
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
 import {toast, ToastContainer} from "react-toastify";

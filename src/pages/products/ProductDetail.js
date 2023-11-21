@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {callProductDetailAPI} from "../../apis/ProductAPICalls";
-import ProductItem from "../../component/items/ProductItem";
+import ProductItem from "../../components/items/ProductItem";
 
 function ProductDetail() {
 

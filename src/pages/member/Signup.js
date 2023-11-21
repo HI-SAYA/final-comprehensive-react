@@ -1,4 +1,4 @@
-import SignupForm from "../../component/form/SignupForm";
+import SignupForm from "../../components/form/SignupForm";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import {useSelector} from "react-redux";

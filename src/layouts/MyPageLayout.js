@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import MyPageNavbar from "../component/common/MyPageNavbar";
+import MyPageNavbar from "../components/common/MyPageNavbar";
 
 function MyPageLayout () {
 

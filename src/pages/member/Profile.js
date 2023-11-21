@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {callMemberAPI} from "../../apis/MemberAPICalls";
-import ProfileItem from "../../component/items/ProfileItem";
+import ProfileItem from "../../components/items/ProfileItem";
 
 function Profile() {
 
