@@ -2,6 +2,8 @@ import {authRequest} from "./Api";
 import {toast} from "react-toastify";
 import {getOrders, postSuccess} from "../modules/OrderModule";
 
+// 1. 주문 등록
+// @PostMapping("/order")
 export const callOrderRegistAPI = ({ registRequest }) => {
 
     return async (dispatch, getState) => {
@@ -28,7 +30,8 @@ export const callOrderRegistAPI = ({ registRequest }) => {
     }
 }
 
-
+// 2 . 회원의 주문 목록 조회
+// @GetMapping("/order")
 export const callOrdersAPI = ({ currentPage }) => {
 
     return async (dispatch, getState) => {

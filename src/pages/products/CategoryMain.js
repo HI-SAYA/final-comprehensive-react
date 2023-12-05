@@ -5,6 +5,7 @@ import {callProductCategoryListAPI} from "../../apis/ProductAPICalls";
 import ProductList from "../../components/lists/ProductList";
 import PagingBar from "../../components/common/PagingBar";
 
+// 3. 상품 목록 조회 : 카테고리 기준, 페이징, 주문 불가 상품 제외(고객)
 function CategoryMain(){
 
     const dispatch = useDispatch();

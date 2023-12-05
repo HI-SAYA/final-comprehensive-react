@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {callOrderRegistAPI} from "../../apis/OrderAPICalls";
 
+// 1. 주문 등록
 function Order() {
 
     /* navigate로 전달 된 state 꺼내기 위해 사용 */

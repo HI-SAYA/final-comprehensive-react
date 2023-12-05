@@ -5,6 +5,7 @@ import {callProductCategoryListAPI, callProductSearchListAPI} from "../../apis/P
 import ProductList from "../../components/lists/ProductList";
 import PagingBar from "../../components/common/PagingBar";
 
+// 4. 상품 목록 조회 : 상품명 검색 기준, 페이징, 주문 불가 상품 제외 (고객)
 function SearchMain(){
 
     const dispatch = useDispatch();

@@ -4,7 +4,8 @@ import {toast} from "react-toastify";
 
 
 
-
+//  1. 상품별 리뷰 목록 조회
+//  @GetMapping("/reviews/product/{productCode}")
 export const callReviewsAPI = ({ productCode, currentPage }) => {
 
     return async (dispatch, getState) => {
@@ -26,7 +27,8 @@ export const callReviewsAPI = ({ productCode, currentPage }) => {
     }
 }
 
-
+// 2. 리뷰 코드로 리뷰 상세 조회
+// @GetMapping("/reviews/{reviewCode}")
 export const callReviewAPI = ({ reviewCode }) => {
 
     return async (dispatch, getState) => {
@@ -49,7 +51,7 @@ export const callReviewAPI = ({ reviewCode }) => {
     }
 }
 
-
+// 3. 리뷰 작성
 export const callReviewRegistAPI = ({ registRequest }) => {
 
     return async (dispatch, getState) => {

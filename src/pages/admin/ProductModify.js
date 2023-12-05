@@ -3,6 +3,7 @@ import {useEffect, useRef, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {callAdminProductAPI, callAdminProductModifyAPI} from "../../apis/ProductAPICalls";
 
+// 8. 상품 수정(관리자)
 function ProductModify () {
 
     const { productCode } = useParams();

@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {callReviewRegistAPI} from "../../apis/ReviewAPICalls";
 import {useNavigate} from "react-router-dom";
 
+// 3. 리뷰 작성
+// @PostMapping("reviews")
 function ReviewWriteModal({ productCode, setProductReviewWriteModal }) {
 
     const [form, setForm] = useState({ productCode });

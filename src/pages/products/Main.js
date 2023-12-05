@@ -4,6 +4,7 @@ import {callProductListAPI} from "../../apis/ProductAPICalls";
 import ProductList from "../../components/lists/ProductList";
 import PagingBar from "../../components/common/PagingBar";
 
+// 1. 상품 목록 조회 - 페이징, 주문 불가 상품 제외 (고객) + 2. 상품 목록 조회 - 페이징, 주문 불가 상품 제외 (관리자)
 function Main() {
 
     const dispatch = useDispatch();

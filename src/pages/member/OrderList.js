@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {callOrdersAPI} from "../../apis/OrderAPICalls";
 
-
+// 2. 회원의 주문 목록 조회
 function OrderList() {
 
     const [productReviewWriteModal, setProductReviewWriteModal] = useState(false);

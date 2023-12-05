@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {callReviewAPI} from "../../apis/ReviewAPICalls";
 
+// 2. 리뷰 코드로 리뷰 상세 조회
 function ReviewDetail() {
 
     const { reviewCode } = useParams();

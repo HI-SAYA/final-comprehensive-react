@@ -1,5 +1,7 @@
 import {useNavigate} from "react-router-dom";
 
+
+// 6.6. 상품 상세 조회 : productCode로 상품 1개 조회, 주문 불가 상품 포함(관리자)
 function ProductTable({data}) {
 
     const navigate = useNavigate();

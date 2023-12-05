@@ -9,6 +9,8 @@ import {
 } from "../modules/ProductModule";
 import {toast} from "react-toastify";
 
+// 1. 상품 목록 조회 - 페이징, 주문 불가 상품 제외 (고객) + 2. 상품 목록 조회 - 페이징, 주문 불가 상품 제외 (관리자)
+// @GetMapping("/products") + @GetMapping("/products-management")
 export const callProductListAPI = ({ currentPage = 1 }) => {
 
     return async (dispatch, getState) => {
@@ -23,6 +25,8 @@ export const callProductListAPI = ({ currentPage = 1 }) => {
 };
 
 
+// 3. 상품 목록 조회 : 카테고리 기준, 페이징, 주문 불가 상품 제외(고객)
+// @GetMapping("/products/categories/{categoryCode}")
 export const callProductCategoryListAPI = ({ categoryCode, currentPage = 1 }) => {
 
     return async (dispatch, getState) => {
@@ -36,7 +40,8 @@ export const callProductCategoryListAPI = ({ categoryCode, currentPage = 1 }) =>
     }
 };
 
-
+// 4. 상품 목록 조회 : 상품명 검색 기준, 페이징, 주문 불가 상품 제외 (고객)
+// @GetMapping("/products/search")
 export const callProductSearchListAPI = ({ productName, currentPage = 1 }) => {
 
     return async (dispatch, getState) => {
@@ -50,7 +55,8 @@ export const callProductSearchListAPI = ({ productName, currentPage = 1 }) => {
     }
 };
 
-
+// 5. 상품 상세 조회 : productCode로 상품 1개 조회, 주문 불가 상품 제외(고객)
+// @GetMapping("/products/{productCode}")
 export const callProductDetailAPI = ({ productCode }) => {
 
     return async (dispatch, getState) => {
@@ -64,7 +70,9 @@ export const callProductDetailAPI = ({ productCode }) => {
     }
 };
 
-
+// 6. 상품 상세 조회 : productCode로 상품 1개 조회, 주문 불가 상품 포함(관리자)
+// @GetMapping("/products-management/{productCode}")
+// @PathVariable final Long productCode
 export const callAdminProductListAPI = ({ currentPage = 1 }) => {
 
     return async (dispatch, getState) => {
@@ -78,7 +86,8 @@ export const callAdminProductListAPI = ({ currentPage = 1 }) => {
     }
 };
 
-
+// 7. 상품 등록(관리자)
+// @PostMapping("/products")
 export const callAdminProductRegistAPI = ({ registRequest }) => {
 
     return async (dispatch, getState) => {
@@ -94,7 +103,8 @@ export const callAdminProductRegistAPI = ({ registRequest }) => {
     }
 };
 
-
+// 8. 상품 수정(관리자)
+// @PutMapping("/products/{productCode}")
 export const callAdminProductAPI = ({ productCode }) => {
 
     return async (dispatch, getState) => {
@@ -110,7 +120,8 @@ export const callAdminProductAPI = ({ productCode }) => {
 };
 
 
-
+// 9. 상품 삭제(관리자)
+// @DeleteMapping("/products/{productCode}")
 export const callAdminProductModifyAPI = ({ productCode, modifyRequest }) => {
 
     return async (dispatch, getState) => {

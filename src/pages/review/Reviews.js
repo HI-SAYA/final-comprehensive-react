@@ -5,6 +5,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {callReviewsAPI} from "../../apis/ReviewAPICalls";
 
+//  1. 상품별 리뷰 목록 조회
 function Reviews() {
 
     const { productCode } = useParams();
